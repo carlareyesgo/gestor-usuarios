@@ -1,25 +1,20 @@
-import logo from './logo.svg';
+import useFormulario from './hooks/useFormulario'
 import './App.css';
 
 function App() {
+  const [formulario, handleChange] = useFormulario({name: ''})
+
+  console.log(formulario)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+   <form>
+    <input 
+    name='name' 
+    placeholder='Nombre' 
+    value={formulario.name}
+    onChange={handleChange}
+    />
+   </form>
+  )
 }
 
 export default App;
