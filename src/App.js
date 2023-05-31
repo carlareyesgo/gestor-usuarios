@@ -18,42 +18,47 @@ function App() {
   }
   console.log(formulario, usuarios)
   return (
-    <Container>
-      <Card>
-        <div style={{padding: 20}}>
-          <form onSubmit={submit}>
-            <Input
-              name="name"
-              label="Nombre"
-              value={formulario.name}
-              onChange={handleChange}
-            />
-            <Input
-              name="lastname"
-              label="Apellido"
-              value={formulario.lastname}
-              onChange={handleChange}
-            />
-             <Input
-              name="email"
-              label="Correo"
-              value={formulario.email}
-              onChange={handleChange}
-            />
-            <Button>
-              Enviar
-            </Button>
-          </form>
-        </div>
-      </Card>
-      <Card>
-        <ul>
-          {usuarios.map(x => 
-            <li key={x.email}>{`${x.name} ${x.lastname}: ${x.email}`}</li>
+    <div style={{marginTop: '15%'}}>
+      <Container>
+        <Card>
+          <div style={{ padding: 20 }}>
+            <form onSubmit={submit}>
+              <Input
+                name="name"
+                label="Nombre"
+                value={formulario.name}
+                onChange={handleChange}
+                placeholder='Nombre'
+              />
+              <Input
+                name="lastname"
+                label="Apellido"
+                value={formulario.lastname}
+                onChange={handleChange}
+                placeholder='Apellido'
+              />
+              <Input
+                name="email"
+                label="Correo"
+                value={formulario.email}
+                onChange={handleChange}
+                placeholder='Correo'
+              />
+              <Button>
+                Enviar
+              </Button>
+            </form>
+          </div>
+        </Card>
+        <Card>
+          <ul>
+            {usuarios.map(x =>
+              <li key={x.email}>{`${x.name} ${x.lastname}: ${x.email}`}</li>
             )}
-        </ul>
-      </Card>
-    </Container>
+          </ul>
+        </Card>
+      </Container>
+    </div>
   )
 }
 
